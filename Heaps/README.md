@@ -9,10 +9,16 @@
   
 
 - ## Binary Heaps
-  - Min Heap
-    1. Operations
+  - MinHeap Operations
        - getmin() - O(1) Time
        - extractmin() - O(logn) Time
        - decreasekey() - O(logn) Time
+       - insert() - O(logn) Time
+       - delete() - O(logn) Time
+       <br/>
+  - MaxHeap Operations
+       - getmax() - O(1) Time
+       - extractmax() - O(logn) Time
+       - increasekey() - O(logn) Time
        - insert() - O(logn) Time
        - delete() - O(logn) Time
