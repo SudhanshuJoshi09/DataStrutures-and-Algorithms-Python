@@ -1,4 +1,4 @@
 # Heaps
 
 ## Binary Heaps
-    -### Applications of Binary Heap
+    - ### Applications of Binary Heap
