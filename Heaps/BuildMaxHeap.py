@@ -1,4 +1,4 @@
-class MinHeap:
+class MaxHeap:
     """ Array implmention of Heap """
 
     # Initilize the values.
@@ -20,26 +20,26 @@ class MinHeap:
         """ Returns left child index. """
         return (2*idx + 1)
 
-    def minHeapify(self, idx):
+    def maxHeapify(self, idx):
         """ Heapify the current subtree """
 
         l = self.leftChild(idx)
         r = self.rightChild(idx)
-        smallest = idx
+        largest = idx
 
-        if l < self.heapSize and self.arr[idx] > self.arr[l]:
-            smallest = l
-        if r < self.heapSize and self.arr[smallest] > self.arr[r]:
-            smallest = r
-        if smallest != idx:
-            self.arr[idx], self.arr[smallest] = self.arr[smallest], self.arr[idx]
-            self.minHeapify(smallest)
+        if l < self.heapSize and self.arr[idx] < self.arr[l]:
+            largest = l
+        if r < self.heapSize and self.arr[largest] < self.arr[r]:
+            largest = r
+        if largest != idx:
+            self.arr[idx], self.arr[largest] = self.arr[largest], self.arr[idx]
+            self.maxHeapify(largest)
 
     def buildHeap(self):
-        """ Builds min heap """
+        """ Builds max heap """
 
         for i in range(self.heapSize//2, 0, -1):
-            self.minHeapify(i)
+            self.maxHeapify(i)
     
     def heapCheck(self, idx):
         """ 
@@ -50,14 +50,14 @@ class MinHeap:
 
         l = self.leftChild(idx)
         r = self.rightChild(idx)
-        smallest = idx
-        if l < self.heapSize and self.arr[idx] > self.arr[l]:
-            smallest = l
+        largest = idx
+        if l < self.heapSize and self.arr[idx] < self.arr[l]:
+            largest = l
 
-        if r < self.heapSize and self.arr[idx] > self.arr[r]:
-            smallest = r
+        if r < self.heapSize and self.arr[idx] < self.arr[r]:
+            largest = r
 
-        if smallest == i:
+        if largest == i:
             return True
         return False
 
@@ -66,7 +66,7 @@ def main():
 
     size = int(input())
     arr = list(map(int,input().split()))
-    obj = MinHeap(size, arr)
+    obj = MaxHeap(size, arr)
     obj.buildHeap()
     print(obj.arr)
 
