@@ -9,3 +9,10 @@
   
 
 - ## Binary Heaps
+  - Min Heap
+    1. Operations
+       - getmin() - O(1) Time
+       - extractmin() - O(logn) Time
+       - decreasekey() - O(logn) Time
+       - insert() - O(logn) Time
+       - delete() - O(logn) Time
