@@ -1,7 +1,5 @@
 # Heaps
-
-## Binary Heaps
-- ###### Applications of Heaps
+- ## Applications of Heaps
   1. HeapSort
   2. Priority Queues
   3. Graph Algorithms: Prims, Dijkstra's
@@ -9,3 +7,5 @@
   5. Sort a almost sorted Array.
   6. Merger K sorted Arrays.
   
+
+- ## Binary Heaps
