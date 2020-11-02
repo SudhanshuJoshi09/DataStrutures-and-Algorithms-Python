@@ -12,6 +12,16 @@ class MinHeap:
         self.heapSize = n + 1
         self.arr = [0] + arr
 
+    def __str__(self):
+        """ Returns the string repr. """
+
+        rep = ''
+        for node in (self.arr[1:]):
+            rep += str(node)
+            rep += ' '
+        
+        return rep
+
     def leftChild(self, idx):
         """ Returns left child index. """
         return (2*idx)
@@ -61,6 +71,20 @@ class MinHeap:
             return True
         return False
 
+    def getmin(self):
+        if len(self.arr) >= 2:
+            return self.arr[1]
+        else:
+            print('No elements in the heap')
+
+    def extractMin(self):
+        if len(self.arr) >= 2:
+            ele = self.arr[1]
+            self.arr[1] = self.arr[self.heapSize]
+            self.heapSize -= 1
+        else:
+            print('Insufficent Elements')
+
 def main():
     """ The main function """
 
@@ -68,7 +92,7 @@ def main():
     arr = list(map(int,input().split()))
     obj = MinHeap(size, arr)
     obj.buildHeap()
-    print(obj.arr)
+    print(obj)
 
 
 if __name__ == '__main__':
